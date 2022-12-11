@@ -53,7 +53,7 @@ async def main():
         match = bool(re.match(target_region, region, re.IGNORECASE))
 
         print(
-            f'{Fore.GREEN if match else Fore.CYAN}{data["phone"]} - {region} - {data["operator"]}'
+            f'{Fore.GREEN if match else Fore.CYAN}{data["phone"]} - {region or "Неизвестно"} - {data["operator"] or "Неизвестно"}'
         )
     end_time = datetime.now() - start_time
     print(f'{Fore.GREEN}Сканирование заняло {end_time.total_seconds()} сек.')
